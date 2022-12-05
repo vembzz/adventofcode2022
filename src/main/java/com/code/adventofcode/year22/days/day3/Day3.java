@@ -1,4 +1,4 @@
-package com.code.adventofcode.year22.days;
+package com.code.adventofcode.year22.days.day3;
 
 import com.code.adventofcode.year22.Day2022;
 
