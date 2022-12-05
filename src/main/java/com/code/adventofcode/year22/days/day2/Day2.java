@@ -20,15 +20,16 @@ public class Day2 extends Day2022 {
 
     @Override
     public Object part1() {
-        int totalScorePart1 = getTotalScore(dayStream().map(this::mapToPickPart1));
+        int totalScorePart1 = getTotalScore(inputStream().map(this::mapToPickPart1));
         return "What would your total score be if everything goes exactly according to your strategy guide? " + totalScorePart1;
     }
 
     @Override
     public Object part2() {
-        int totalScorePart2 = getTotalScore(dayStream().map(this::mapToPickPart2));
+        int totalScorePart2 = getTotalScore(inputStream().map(this::mapToPickPart2));
         return "What would your total score be if everything goes exactly according to your strategy guide? " + totalScorePart2;
     }
+
 
     private int getTotalScore(Stream<Game> gameStream) {
         List<Game> picks = gameStream.toList();
@@ -110,3 +111,4 @@ public class Day2 extends Day2022 {
         return game.setOutcome(Outcome.LOOSE);
     }
 }
+

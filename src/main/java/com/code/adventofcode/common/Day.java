@@ -75,11 +75,11 @@ public abstract class Day {
     return Arrays.stream(day().split(delimiter)).toArray(String[]::new);
   }
 
-  protected Stream<String> dayStream() {
-    return dayStream(DEFAULT_DELIMITER);
+  protected Stream<String> inputStream() {
+    return inputStream(DEFAULT_DELIMITER);
   }
 
-  protected Stream<String> dayStream(String delimiter) {
+  protected Stream<String> inputStream(String delimiter) {
     return Arrays.stream(day().split(delimiter));
   }
 
@@ -108,7 +108,7 @@ public abstract class Day {
   }
 
   protected double[] dayDoubles(String delimiter) {
-    return dayStream(delimiter).mapToDouble(Double::parseDouble).toArray();
+    return inputStream(delimiter).mapToDouble(Double::parseDouble).toArray();
   }
 
   protected LongStream dayNumberStream() {
@@ -116,7 +116,7 @@ public abstract class Day {
   }
 
   protected LongStream dayNumberStream(String delimiter) {
-    return dayStream(delimiter).filter(e -> !e.isEmpty()).map(e -> e.replace("\n", "").trim()).mapToLong(Long::parseLong);
+    return inputStream(delimiter).filter(e -> !e.isEmpty()).map(e -> e.replace("\n", "").trim()).mapToLong(Long::parseLong);
   }
 
   protected char[][] dayGrid() {
@@ -124,7 +124,7 @@ public abstract class Day {
   }
 
   protected char[][] dayGrid(String delimiter) {
-    return dayStream(delimiter).map(String::toCharArray).toArray(char[][]::new);
+    return inputStream(delimiter).map(String::toCharArray).toArray(char[][]::new);
   }
 
   public void downloadIfNotDownloaded() {

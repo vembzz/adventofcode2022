@@ -33,7 +33,7 @@ public class Day1 extends Day2022 {
     List<Integer> elves = new ArrayList<>();
     int[] current = new int[]{0};
 
-    dayStream().forEach(elf -> elvesCalories(elves, current, elf));
+    inputStream().forEach(elf -> elvesCalories(elves, current, elf));
     elves.add(current[0]);
 
     return elves.get(0);
@@ -52,9 +52,7 @@ public class Day1 extends Day2022 {
     List<Integer> elves = new ArrayList<>();
     int[] current = new int[]{0};
 
-    dayStream().forEach(elf -> {
-      elvesCalories(elves, current, elf);
-    });
+    inputStream().forEach(elf -> elvesCalories(elves, current, elf));
 
     elves.add(current[0]);
     elves.sort((a, b) -> b - a);
